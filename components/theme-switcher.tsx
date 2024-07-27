@@ -3,28 +3,31 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-import { MoonIcon, SunIcon } from "@heroicons/react/20/solid";
+import { AnimatePresence, motion } from "framer-motion";
+import { IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 
 export const ThemeSwitcher = () => {
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
+  const { toggleColorMode } = useColorMode();
 
   return (
-    <button
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="px-4 py-2 bg-gray-800 text-white rounded-md"
-    >
-      {theme === "light" ? (
-        <MoonIcon className="w-5 h-5" />
-      ) : (
-        <SunIcon className="w-5 h-5" />
-      )}{" "}
-    </button>
+    <AnimatePresence mode="wait" initial={false}>
+      <motion.div
+        style={{ display: "inline-block" }}
+        key={useColorModeValue("light", "dark")}
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 20, opacity: 0 }}
+        transition={{ duration: 0.2 }}
+      >
+        <IconButton
+          aria-label="Toggle Dark Mode"
+          colorScheme={useColorModeValue("purple", "orange")}
+          icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
+          onClick={toggleColorMode}
+          size="md"
+        ></IconButton>
+      </motion.div>
+    </AnimatePresence>
   );
 };
