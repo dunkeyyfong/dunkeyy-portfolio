@@ -21,11 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ChakraProvider>
-          <ThemeProvider defaultTheme="system" enableSystem={true}>
-            {children}
-          </ThemeProvider>
-        </ChakraProvider>
+        <ThemeProvider defaultTheme="system" enableSystem={true}>
+          <ChakraProvider>{children}</ChakraProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

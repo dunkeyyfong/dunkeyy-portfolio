@@ -1,14 +1,24 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-
+import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 
 export const ThemeSwitcher = () => {
-  const { toggleColorMode } = useColorMode();
+  const { theme, setTheme } = useTheme();
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  useEffect(() => {
+    if (colorMode !== theme) {
+      setTheme(colorMode);
+    }
+  }, [colorMode, theme, setTheme]);
+
+  const handleToggle = () => {
+    toggleColorMode();
+  };
 
   return (
     <AnimatePresence mode="wait" initial={false}>
@@ -24,9 +34,9 @@ export const ThemeSwitcher = () => {
           aria-label="Toggle Dark Mode"
           colorScheme={useColorModeValue("purple", "orange")}
           icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
-          onClick={toggleColorMode}
+          onClick={handleToggle}
           size="md"
-        ></IconButton>
+        />
       </motion.div>
     </AnimatePresence>
   );
