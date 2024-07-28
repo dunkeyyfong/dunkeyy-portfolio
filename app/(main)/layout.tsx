@@ -1,4 +1,4 @@
-import { Heading } from "./_components/heading";
+import { Heading } from "@/components/heading";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
