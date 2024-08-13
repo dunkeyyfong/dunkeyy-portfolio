@@ -6,7 +6,7 @@ import { Stack, HStack, VStack } from "@chakra-ui/react";
 
 export const Heading = () => {
   return (
-    <div className="fixed top-0 left-0 right-0 p-2 z-50">
+    <div className="fixed top-0 left-0 right-0 p-2 z-50 backdrop-blur-md">
       <div className="flex items-center justify-between xl:mx-[30vh] mx-3">
         <HStack>
           <Text as="b" fontSize="xl">
