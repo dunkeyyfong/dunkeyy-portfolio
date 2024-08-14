@@ -2,10 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
 body {
-  @apply bg-blue-400 text-black;
+  @apply bg-yellow-100 text-gray-800;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .dark body {
   @apply bg-gray-800 text-white;
 }
+
