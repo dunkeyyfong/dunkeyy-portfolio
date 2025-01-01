@@ -50,7 +50,7 @@ export const Heading = () => {
         <HStack>
           <ThemeSwitcher />
           <Box display={{ base: "flex", md: "none" }}>
-            <Menu>
+            <Menu isLazy>
               <MenuButton
                 as={IconButton}
                 aria-label="More"
