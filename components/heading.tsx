@@ -1,20 +1,40 @@
 "use client";
 
 import { ThemeSwitcher } from "@/components/theme-switcher";
-import { Text } from "@chakra-ui/react";
-import { Stack, HStack, VStack } from "@chakra-ui/react";
+import { Text, Box, HStack, useColorMode } from "@chakra-ui/react";
 
 export const Heading = () => {
+  const { colorMode } = useColorMode();
+
   return (
-    <div className="fixed top-0 left-0 right-0 p-2 z-50 dark:bg-black-900 light:bg-yellow-50 backdrop-blur-xl">
-      <div className="flex items-center justify-between xl:mx-[30vh] mx-3">
+    <Box
+      position="fixed"
+      top={0}
+      left={0}
+      right={0}
+      p={2}
+      zIndex={50}
+      bg={colorMode === "dark" ? "gray.800" : "yellow.50"}
+      backdropFilter="blur(20px)"
+      opacity={0.7}
+    >
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="space-between"
+        mx={{ base: "6", xl: "30vh" }}
+      >
         <HStack>
-          <Text as="b" fontSize="xl" color="white">
+          <Text
+            as="b"
+            fontSize="xl"
+            color={colorMode === "dark" ? "white" : "black"}
+          >
             DunkeyyFong
           </Text>
         </HStack>
         <ThemeSwitcher />
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
