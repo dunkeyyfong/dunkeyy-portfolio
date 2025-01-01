@@ -6,7 +6,6 @@
 
 body {
   @apply bg-yellow-100 text-gray-800;
-  font-family: "Quicksand", sans-serif;
   font-weight: 600;
   font-style: normal;
 }
@@ -16,9 +15,5 @@ body {
 }
 
 .light body {
-  @apply bg-amber-50 text-gray-800;
-}
-
-.light {
-  @apply bg-amber-50;
+  @apply bg-yellow-50 text-gray-800;
 }

@@ -1,7 +1,21 @@
 "use client";
 
 import { ThemeSwitcher } from "@/components/theme-switcher";
-import { Text, Box, HStack, useColorMode } from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
+import {
+  Text,
+  Box,
+  HStack,
+  useColorMode,
+  Menu,
+  MenuButton,
+  IconButton,
+  MenuList,
+  MenuItem,
+  Link,
+  MenuGroup,
+  Divider,
+} from "@chakra-ui/react";
 
 export const Heading = () => {
   const { colorMode } = useColorMode();
@@ -14,26 +28,53 @@ export const Heading = () => {
       right={0}
       p={2}
       zIndex={50}
-      bg={colorMode === "dark" ? "gray.800" : "yellow.50"}
-      backdropFilter="blur(20px)"
-      opacity={0.7}
+      className="backdrop-blur-lg"
     >
       <Box
         display="flex"
         alignItems="center"
         justifyContent="space-between"
-        mx={{ base: "6", xl: "30vh" }}
+        mx={{ base: "3", xl: "30vh" }}
       >
         <HStack>
-          <Text
+          <Link
+            href="/"
             as="b"
             fontSize="xl"
-            color={colorMode === "dark" ? "white" : "black"}
+            color={colorMode === "dark" ? "white" : "blackAlpha.900"}
+            _hover={{ textDecoration: "none" }}
           >
             DunkeyyFong
-          </Text>
+          </Link>
         </HStack>
-        <ThemeSwitcher />
+        <HStack>
+          <ThemeSwitcher />
+          <Box display={{ base: "flex", md: "none" }}>
+            <Menu>
+              <MenuButton
+                as={IconButton}
+                aria-label="More"
+                icon={<HamburgerIcon />}
+                variant={"outline"}
+                borderColor={"gray.400"}
+              />
+              <MenuList>
+                <MenuItem>
+                  <Link href="/">Home</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link href="/">Works</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link href="/">Projects</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link href="/">Contact</Link>
+                </MenuItem>
+              </MenuList>
+            </Menu>
+          </Box>
+        </HStack>
       </Box>
     </Box>
   );
