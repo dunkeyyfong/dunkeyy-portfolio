@@ -5,7 +5,7 @@ const Banner = () => {
     <div className="relative h-[400px] mt-[6.2vh] w-full">
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="/IMG_1881.mp4"
+        src="/videos/IMG_1881.mp4"
         loop
         muted
         playsInline
