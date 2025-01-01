@@ -1,10 +1,17 @@
 import * as React from "react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { M_PLUS_Rounded_1c } from "next/font/google";
 import "./globals.css";
 
 import { ChakraProvider } from "@chakra-ui/react";
 import { ThemeProvider } from "@/components/provider/theme-provider";
+import { Heading } from "@/components/heading";
+import Footer from "@/components/footer";
+
+const mPlus = M_PLUS_Rounded_1c({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 export const metadata: Metadata = {
   title: "DunkeyyFong - My Portfolio",
@@ -18,9 +25,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={mPlus.className}>
         <ThemeProvider defaultTheme="system" enableSystem={true}>
-          <ChakraProvider>{children}</ChakraProvider>
+          <ChakraProvider>
+            <Heading />
+            {children}
+            <Footer />
+          </ChakraProvider>
         </ThemeProvider>
       </body>
     </html>

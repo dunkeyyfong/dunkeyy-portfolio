@@ -16,6 +16,7 @@ import {
   MenuGroup,
   Divider,
 } from "@chakra-ui/react";
+import DuckFoot from "./icons/duckfoot";
 
 export const Heading = () => {
   const { colorMode } = useColorMode();
@@ -36,7 +37,8 @@ export const Heading = () => {
         justifyContent="space-between"
         mx={{ base: "3", xl: "30vh" }}
       >
-        <HStack>
+        <HStack alignItems={"center"}>
+          <DuckFoot />
           <Link
             href="/"
             as="b"
@@ -63,13 +65,13 @@ export const Heading = () => {
                   <Link href="/">Home</Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link href="/">Works</Link>
+                  <Link href="/works">Works</Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link href="/">Projects</Link>
+                  <Link href="/projects">Projects</Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link href="/">Contact</Link>
+                  <Link href="/contact">Contact</Link>
                 </MenuItem>
               </MenuList>
             </Menu>
