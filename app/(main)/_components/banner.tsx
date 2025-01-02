@@ -11,9 +11,9 @@ const Banner = () => {
         playsInline
         autoPlay
       />
-      <div className="absolute inset-0 bg-gray-900 opacity-75 backdrop-opacity-10"></div>
+      <div className="absolute inset-0 dark:bg-gray-900 bg-slate-400 opacity-75 backdrop-opacity-10"></div>
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-        <h2 className="text-lg text-gray-300 uppercase mb-2 tracking-wide drop-shadow-md">
+        <h2 className="text-lg text-gray-100 uppercase mb-2 tracking-wide drop-shadow-md">
           Welcome to
         </h2>
         <h1 className="text-4xl md:text-7xl font-bold text-white drop-shadow-xl">

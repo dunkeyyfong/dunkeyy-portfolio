@@ -48,6 +48,16 @@ export const Heading = () => {
           >
             DunkeyyFong
           </Link>
+          <HStack
+            display={{ base: "none", md: "flex" }}
+            spacing={6}
+            alignItems={"center"}
+            ml={"100px"}
+          >
+            <Link href="/works">Works</Link>
+            <Link href="/projects">Projects</Link>
+            <Link href="/contact">Contact</Link>
+          </HStack>
         </HStack>
         <HStack>
           <ThemeSwitcher />
