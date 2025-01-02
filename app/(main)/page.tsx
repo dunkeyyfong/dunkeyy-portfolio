@@ -13,7 +13,7 @@ const MainPage = () => {
             <Heading as="h1" size="xl" mt={8}>
               Nguyen Trong Phong
             </Heading>
-            <Text>Indie developer ( Rapper / Developer )</Text>
+            <Text>Indie developer ( Artist / Developer )</Text>
           </div>
           <div className="flex justify-center mt-7">
             <Image
